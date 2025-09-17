@@ -1,0 +1,92 @@
+
+.responsive-container {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.responsive-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.dark .responsive-card {
+  background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.responsive-form {
+  width: 100%;
+  max-width: 100%;
+}
+.responsive-form input,
+.responsive-form textarea,
+.responsive-form select {
+  width: 100%;
+}
+
+.responsive-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+.responsive-table {
+  width: 100%;
+  min-width: 500px;
+}
+
+.page-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+.section-title {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+.mobile-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.mobile-py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 1rem;
+  }
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-form {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding: 1.5rem;
+  }
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .responsive-form {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
