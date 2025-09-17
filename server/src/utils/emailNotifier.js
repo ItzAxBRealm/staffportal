@@ -26,12 +26,11 @@ const transportConfig = {
     pass: emailPassword
   },
   secure: emailPort === 465,
-  requireTLS: emailPort === 587 || emailPort === 2525, 
+  requireTLS: emailPort === 587, 
   tls: {
     rejectUnauthorized: false,
     minVersion: 'TLSv1.2',   
-    ciphers: 'HIGH:!aNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA'     
-    // ciphers: 'SSLv3'            
+    ciphers: 'SSLv3'            
   },
   debug: true                   
 };
@@ -226,7 +225,6 @@ export const sendTicketStatusChangeNotification = async (ticket, previousStatus)
         'open': 'Open',
         'in-progress': 'In Progress',
         'resolved': 'Resolved',
-        'closed': 'Closed'
     };
 
     const formattedPreviousStatus = statusMap[previousStatus] || previousStatus;
